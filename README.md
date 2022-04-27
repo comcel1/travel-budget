@@ -13,9 +13,9 @@ Heroku (deployed): https://pcn-challenge-19-travel-budget.herokuapp.com/ </br>
 
 ## Screenshot
 
-## Installation
-
 ![pcn-challenge-19-travel-budget herokuapp com_](https://user-images.githubusercontent.com/90969624/165642436-020b40e2-d78b-42ce-9330-0812933f8f28.png)
+
+## Installation
 
 To install, clone the repo and run on a local server using npm start.
 
