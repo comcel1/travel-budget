@@ -9,7 +9,7 @@ This application uses indexDB and service workers to enable it to work offline o
 ## Links
 
 GitHub: https://github.com/comcel1/travel-budget </br>
-Heroku (deployed): https://github.com/comcel1/travel-budget </br>
+Heroku (deployed): https://pcn-challenge-19-travel-budget.herokuapp.com/ </br>
 
 ## Installation
 
@@ -23,6 +23,6 @@ This application can be run through a local server or by clicking on the Heroku 
 
 Feel free to contact me with any questions.
 
-Paul Nelson</br>
+Paul Nelson</br>7
 Email: paulnelson@comcast.net </br>
 GitHub: [comcel1](https://github.com/comcel1/)
