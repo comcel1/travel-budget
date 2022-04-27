@@ -27,6 +27,6 @@ This application can be run through a local server or by clicking on the Heroku 
 
 Feel free to contact me with any questions.
 
-Paul Nelson</br>7
+Paul Nelson</br>
 Email: paulnelson@comcast.net </br>
 GitHub: [comcel1](https://github.com/comcel1/)
