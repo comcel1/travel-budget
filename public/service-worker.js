@@ -1,6 +1,6 @@
 const FILES_TO_CACHE = [
   // not sure what we need to cache yet
-  // './index.html',
+  /*   // './index.html',
   // './events.html',
   // './tickets.html',
   // './schedule.html',
@@ -10,7 +10,7 @@ const FILES_TO_CACHE = [
   // './dist/app.bundle.js',
   // './dist/events.bundle.js',
   // './dist/tickets.bundle.js',
-  // './dist/schedule.bundle.js',
+  // './dist/schedule.bundle.js', */
 ];
 
 self.addEventListener('install', function (e) {});
