@@ -1,16 +1,49 @@
+const APP_PREFIX = 'TravelBudget-';
+const VERSION = 'version_01';
+const CACHE_NAME = APP_PREFIX + VERSION;
 const FILES_TO_CACHE = [
-  // not sure what we need to cache yet
-  /*   // './index.html',
-  // './events.html',
-  // './tickets.html',
-  // './schedule.html',
-  // './assets/css/style.css',
-  // './assets/css/bootstrap.css',
-  // './assets/css/tickets.css',
-  // './dist/app.bundle.js',
-  // './dist/events.bundle.js',
-  // './dist/tickets.bundle.js',
-  // './dist/schedule.bundle.js', */
+  './index.html',
+  './css/styles.css',
+  './js/idb.js',
+  './js/index.js',
 ];
 
-self.addEventListener('install', function (e) {});
+self.addEventListener('install', function (event) {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => {
+      console.log('installing cache : ', CACHE_NAME);
+      return cache.addAll(FILES_TO_CACHE);
+    })
+  );
+});
+
+self.addEventListener('activate', function (event) {
+  event.waitUntil(
+    caches.keys().then((keyList) => {
+      let cacheKeepList = keyList.filter(function (key) {
+        return key.indexOf(APP_PREFIX);
+      });
+      cacheKeepList.push(CACHE_NAME);
+      return Promise.all(
+        keyList.map(function (key, i) {
+          if (cacheKeepList.indexOf(key) === -1) {
+            console.log('deleting cache : ', keyList[i]);
+            return caches.delete(keyList[i]);
+          }
+        })
+      );
+    })
+  );
+});
+
+self.addEventListener('fetch', function (event) {
+  event.respondWith(
+    caches.match(event.request).then(function (request) {
+      if (request) {
+        return request;
+      } else {
+        return fetch(event.request);
+      }
+    })
+  );
+});
